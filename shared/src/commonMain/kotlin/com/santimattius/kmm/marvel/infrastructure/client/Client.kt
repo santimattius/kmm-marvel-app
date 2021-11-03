@@ -1,5 +1,6 @@
 package com.santimattius.kmm.marvel.infrastructure.client
 
+import com.santimattius.kmm.marvel.di.Credentials
 import io.ktor.client.*
 import io.ktor.client.features.*
 import io.ktor.client.features.json.JsonFeature

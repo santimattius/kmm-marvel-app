@@ -35,6 +35,7 @@ kotlin {
     val coroutinesVersion = "1.5.2-native-mt"
     val dateTimeVersion = "0.3.1"
     val kryptoVersion = "2.2.0"
+    val koinVersion = "3.1.3"
 
     sourceSets {
         val commonMain by getting {
@@ -49,6 +50,9 @@ kotlin {
                 //Kotlin date time
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:$dateTimeVersion")
                 implementation("com.soywiz.korlibs.krypto:krypto:$kryptoVersion")
+                //Koin
+                implementation("io.insert-koin:koin-core:$koinVersion")
+
 
             }
         }
