@@ -30,7 +30,7 @@ internal fun ktorHttpClient(credentials: Credentials) = HttpClient {
     install(DefaultRequest) {
         header(HttpHeaders.ContentType, ContentType.Application.Json)
         parameter(API_KEY, credentials.publicKey)
-        parameter(TS, now.toString())
+        parameter(TS, now.toEpochMilliseconds())
         parameter(HASH, hash)
     }
 }

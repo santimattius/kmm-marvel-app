@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Marvel Composable</string>
+    <string name="series">Series</string>
+    <string name="comics">Comics</string>
+    <string name="stories">Stories</string>
+    <string name="icon_desc">Arrow Right</string>
+</resources>
