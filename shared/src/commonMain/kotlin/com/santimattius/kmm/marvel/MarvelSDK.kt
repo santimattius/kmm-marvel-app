@@ -10,7 +10,6 @@ class MarvelSDK : KoinComponent {
     private val findCharacter: FindCharacter by inject()
     private val getCharacters: GetCharacters by inject()
 
-
     suspend fun findCharacterById(id: Long) = findCharacter(id)
 
     suspend fun getCharactersPage(offset: Long, limit: Long) = getCharacters(offset, limit)

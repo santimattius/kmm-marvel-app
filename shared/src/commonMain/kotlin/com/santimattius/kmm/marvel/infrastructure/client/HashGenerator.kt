@@ -7,5 +7,5 @@ internal fun generateHash(time: Long, privateKey: String, publicKey: String): St
     md5(time.toString() + privateKey + publicKey)
 
 private fun md5(stringToHash: String): String {
-    return stringToHash.toByteArray().md5().toString()
+    return stringToHash.toByteArray().md5().hexLower
 }
