@@ -1,6 +1,48 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id("com.android.application")
     kotlin("android")
+}
+
+val publicKey: String = gradleLocalProperties(rootDir).getProperty("marvelPublicKey")
+val privateKey: String = gradleLocalProperties(rootDir).getProperty("marvelPrivateKey")
+
+android {
+    compileSdk = 31
+    defaultConfig {
+        applicationId = "com.santimattius.kmm.marvel.android"
+        minSdk = 23
+        targetSdk = 31
+        versionCode = 1
+        versionName = "1.0"
+
+        //keys
+        buildConfigField("String", "PUBLIC_KEY", publicKey)
+        buildConfigField("String", "PRIVATE_KEY", privateKey)
+    }
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.0.5"
+    }
+
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
@@ -51,37 +93,3 @@ dependencies {
 
     implementation(project(":shared"))
 }
-
-android {
-    compileSdk = 31
-    defaultConfig {
-        applicationId = "com.santimattius.kmm.marvel.android"
-        minSdk = 23
-        targetSdk = 31
-        versionCode = 1
-        versionName = "1.0"
-    }
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.5"
-    }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
-    }
-}
-
