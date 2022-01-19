@@ -10,42 +10,25 @@ import SwiftUI
 
 struct CharacterItemView: View {
     
-    var character: Character
+    var character: UiCharacter
     
     var body: some View {
-        VStack(alignment:.center) {
-            AsyncImage(url: URL(string: character.thumbnail)) { image in
-                   image
-                       .resizable()
-                       .aspectRatio(0.67, contentMode: .fit)
-                       .overlay{
-                           Rectangle()
-                               .scaledToFill()
-                               .foregroundColor(.gray)
-                               .opacity(0.5)
-                               .overlay(
-                                   VStack(alignment:.center) {
-                                       Spacer()
-                                       Text(character.name)
-                                           .fontWeight(.bold)
-                                           .font(.title)
-                                           .foregroundColor(.white)
-                                           .lineSpacing(8)
-                                           .padding()
-                                   }
-                               )
-                       }
-               } placeholder: {
-                   ProgressView()
-               }
+        AsyncImage(url: URL(string: character.thumbnail)) { image in
+               image
+                   .resizable()
+                   .aspectRatio(0.67, contentMode: .fit)
+                   .frame(minWidth: 0,
+                          maxWidth: .infinity,
+                          minHeight: 50)
+                   .cornerRadius(4)
+           } placeholder: {
+               ProgressView()
            }
-           .frame(minWidth: 300)
-           .cornerRadius(4)
     }
 }
 
 struct CharacterItemView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterItemView(character: Character(name: "Prueba", thumbnail: "http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg", description: "This is description"))
+        CharacterItemView(character: UiCharacter(name: "Prueba", thumbnail: "http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg", description: "This is description"))
     }
 }

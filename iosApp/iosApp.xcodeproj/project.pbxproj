@@ -9,16 +9,20 @@
 /* Begin PBXBuildFile section */
 		02374F30617E9573C8167AE9 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E59C8E4742580A3E1977FB /* Pods_iosApp.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
-		4B6F522C2785114C002EE1D9 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F522B2785114C002EE1D9 /* Character.swift */; };
+		4B6F522C2785114C002EE1D9 /* UiCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F522B2785114C002EE1D9 /* UiCharacter.swift */; };
 		4B6F522E278511CF002EE1D9 /* CharacterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F522D278511CF002EE1D9 /* CharacterItemView.swift */; };
+		4B9781482797A6C7005AA797 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9781472797A6C7005AA797 /* AppDelegate.swift */; };
+		4B97814A2797B8BF005AA797 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9781492797B8BF005AA797 /* CharactersViewModel.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0346A7BC10EF7EF214D379D4 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
-		4B6F522B2785114C002EE1D9 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		4B6F522B2785114C002EE1D9 /* UiCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiCharacter.swift; sourceTree = "<group>"; };
 		4B6F522D278511CF002EE1D9 /* CharacterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemView.swift; sourceTree = "<group>"; };
+		4B9781472797A6C7005AA797 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4B9781492797B8BF005AA797 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				4B6F522D278511CF002EE1D9 /* CharacterItemView.swift */,
+				4B9781492797B8BF005AA797 /* CharactersViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -49,7 +54,7 @@
 		4B6F522927851126002EE1D9 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				4B6F522B2785114C002EE1D9 /* Character.swift */,
+				4B6F522B2785114C002EE1D9 /* UiCharacter.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
+				4B9781472797A6C7005AA797 /* AppDelegate.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -203,9 +209,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B6F522C2785114C002EE1D9 /* Character.swift in Sources */,
+				4B97814A2797B8BF005AA797 /* CharactersViewModel.swift in Sources */,
+				4B6F522C2785114C002EE1D9 /* UiCharacter.swift in Sources */,
 				4B6F522E278511CF002EE1D9 /* CharacterItemView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				4B9781482797A6C7005AA797 /* AppDelegate.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Character {
+struct UiCharacter {
     
     var id: UUID = UUID()
     var name: String
