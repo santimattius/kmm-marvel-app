@@ -15,8 +15,8 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.santimattius.kmm.marvel.android.splash.SplashScreen
-import com.santimattius.kmm.marvel.android.detail.presentation.DetailScreen
-import com.santimattius.kmm.marvel.android.home.presentation.HomeScreen
+import com.santimattius.kmm.marvel.android.detail.ui.DetailScreen
+import com.santimattius.kmm.marvel.android.home.ui.HomeScreen
 
 
 @ExperimentalAnimationApi

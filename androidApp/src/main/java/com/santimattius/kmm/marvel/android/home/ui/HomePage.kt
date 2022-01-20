@@ -1,4 +1,4 @@
-package com.santimattius.kmm.marvel.android.home.presentation
+package com.santimattius.kmm.marvel.android.home.ui
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -23,17 +23,18 @@ import coil.compose.rememberImagePainter
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.santimattius.kmm.marvel.android.R
-import com.santimattius.kmm.marvel.android.home.application.HomeViewModel
 import com.santimattius.kmm.marvel.android.home.domain.Characters
+import com.santimattius.kmm.marvel.domain.entities.Character
 import kotlinx.coroutines.flow.Flow
 import org.koin.androidx.compose.getViewModel
-import com.santimattius.kmm.marvel.domain.entities.Character
 
 @ExperimentalCoilApi
 @ExperimentalFoundationApi
 @Composable
-fun HomeScreen(onClick: (Character) -> Unit) {
-    val viewModel: HomeViewModel = getViewModel()
+fun HomeScreen(
+    viewModel: HomeViewModel = getViewModel(),
+    onClick: (Character) -> Unit,
+) {
     HomeScreen(viewModel.characters, onClick)
 }
 
@@ -69,7 +70,7 @@ fun HomeScreen(data: Flow<Characters>, onClick: (Character) -> Unit) {
 private fun GridOfCharacters(
     characters: LazyPagingItems<Character>,
     padding: PaddingValues,
-    onClick: (Character) -> Unit
+    onClick: (Character) -> Unit,
 ) {
 
     LazyVerticalGrid(

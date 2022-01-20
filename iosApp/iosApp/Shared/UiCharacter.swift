@@ -11,7 +11,7 @@ import Foundation
 
 struct UiCharacter {
     
-    var id: UUID = UUID()
+    var id: Int64
     var name: String
     var thumbnail: String
     var description: String

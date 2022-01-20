@@ -4,37 +4,15 @@ import Combine
 
 struct ContentView: View { 
 	
-    @ObservedObject var viewModel: CharactersViewModel
-    
-    private let greet = Greeting().greeting()
-    
-    private let columns: [GridItem] =
-    Array(repeating: .init(.flexible()),count: 2)
+    private let sdk = MarvelSDK()
     
     var body: some View {
-        NavigationView{
-            ScrollView {
-                 LazyVGrid(columns: columns,spacing: 10) {
-                     
-                     ForEach(viewModel.characters, id: \.id) { item in
-                         CharacterItemView(
-                            character: item
-                         )
-                         
-                     }
-                 }.padding()
-            }
-            .onAppear{
-                viewModel.loadCharacters()
-            }
-            .navigationTitle(greet)
-        }
+        CharactersView(viewModel:  CharactersViewModel(sdk: sdk ))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-        let sdk = MarvelSDK()
-		ContentView(viewModel:  CharactersViewModel(sdk: sdk ))
+		ContentView()
 	}
 }

@@ -1,4 +1,4 @@
-package com.santimattius.kmm.marvel.android.detail.presentation
+package com.santimattius.kmm.marvel.android.detail.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,8 +20,6 @@ import androidx.compose.ui.text.style.TextAlign
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.santimattius.kmm.marvel.android.R
-import com.santimattius.kmm.marvel.android.detail.application.DetailState
-import com.santimattius.kmm.marvel.android.detail.application.DetailViewModel
 import com.santimattius.kmm.marvel.domain.entities.Character
 import org.koin.androidx.compose.getViewModel
 import org.koin.core.parameter.parametersOf

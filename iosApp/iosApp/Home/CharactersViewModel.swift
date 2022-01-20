@@ -12,7 +12,7 @@ import shared
 
 final class CharactersViewModel: ObservableObject{
     
-    @Published public var characters:[UiCharacter] = []
+    @Published public var state: CharactersViewState = .loading
     
     private let sdk: MarvelSDK
     
@@ -24,14 +24,13 @@ final class CharactersViewModel: ObservableObject{
         self.sdk.getCharactersPage(offset: 0, limit: 100, completionHandler: { result, error in
             
             if let currentCharacters = result {
-                self.characters = currentCharacters.map{ item in
-                    UiCharacter(name: item.name, thumbnail: item.thumbnail, description: item.description_)
+                let characters = currentCharacters.map{ item in
+                    UiCharacter(id:item.id, name: item.name, thumbnail: item.thumbnail, description: item.description_)
                 }
+                self.state = .result(characters)
            } else {
-//               self.launches = .error(error?.localizedDescription ?? "error")
-               self.characters = []
+               self.state = .error("Characters not received.")
            }
-            
         })
     }
 }

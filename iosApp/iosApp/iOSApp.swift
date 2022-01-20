@@ -9,7 +9,7 @@ struct iOSApp: App {
     
 	var body: some Scene {
 		WindowGroup {
-			ContentView(viewModel: CharactersViewModel(sdk: MarvelSDK()))
+			ContentView()
 		}
 	}
     

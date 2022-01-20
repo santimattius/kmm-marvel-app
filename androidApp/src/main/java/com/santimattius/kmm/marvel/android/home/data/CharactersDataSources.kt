@@ -1,4 +1,4 @@
-package com.santimattius.kmm.marvel.android.home.infrastructure
+package com.santimattius.kmm.marvel.android.home.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState

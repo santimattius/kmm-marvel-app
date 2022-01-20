@@ -1,4 +1,4 @@
-package com.santimattius.kmm.marvel.android.home.application
+package com.santimattius.kmm.marvel.android.home.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
