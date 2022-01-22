@@ -8,14 +8,14 @@ Oficial documentation: https://kotlinlang.org/lp/mobile/
 
 ### Android App
 <p align="center">
-  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/kmm_android_home.png?raw=true" alt="Android Home Screen"/>
-  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/kmm_android_detail.png?raw=true" alt="Android Detail Screen"/>
+  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/master/screenshots/kmm_android_home.png?raw=true" alt="Android Home Screen"/>
+  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/master/screenshots/kmm_android_detail.png?raw=true" alt="Android Detail Screen"/>
 </p>
 
 ### iOS App
 <p align="center">
-  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/kmm_ios_home.png?raw=true" alt="iOS Home Screen"/>
-  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/kmm_ios_detail.png?raw=true" alt="iOS Detail Screen"/>
+  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/master/screenshots/kmm_ios_home.png?raw=true" alt="iOS Home Screen"/>
+  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/master/screenshots/kmm_ios_detail.png?raw=true" alt="iOS Detail Screen"/>
 </p>
 
 ## Application architecture
@@ -25,13 +25,13 @@ In the following images you will see how the app is built and what its levels of
 ### General
 
 <p align="left">
-  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/kmm-components.png?raw=true" alt="general architecture"/>
+  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/master/screenshots/kmm-components.png?raw=true" alt="general architecture"/>
 </p>
 
 ### Project structure
 
 <p align="left">
-  <img width="700" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/basic-project-structure.png?raw=true" alt="Project packages"/>
+  <img width="700" src="https://github.com/santimattius/kmm-marvel-app/blob/master/screenshots/basic-project-structure.png?raw=true" alt="Project packages"/>
 </p>
 
 ## Dependencies
