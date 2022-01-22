@@ -2,11 +2,21 @@
 
 Application using Kotlin mobile multi platform and Marvel API.
 
+Oficial documentation: https://kotlinlang.org/lp/mobile/
+
 ## Screenshots
+
+### Android App
 <p align="center">
-  <img src="image?raw=true" alt="App Capture"/>
+  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/kmm_android_home.png?raw=true" alt="Android Home Screen"/>
+  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/kmm_android_detail.png?raw=true" alt="Android Detail Screen"/>
 </p>
 
+### iOS App
+<p align="center">
+  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/kmm_ios_home.png?raw=true" alt="iOS Home Screen"/>
+  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/kmm_ios_detail.png?raw=true" alt="iOS Detail Screen"/>
+</p>
 
 ## Application architecture
 
@@ -14,14 +24,14 @@ In the following images you will see how the app is built and what its levels of
 
 ### General
 
-<p align="center">
-  <img src="https://github.com/santimattius/android-arch-template/blob/master/screenshoot/android-clean-arch-general.png?raw=true" alt="general architecture"/>
+<p align="left">
+  <img height="600" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/kmm-components.png?raw=true" alt="general architecture"/>
 </p>
 
 ### Project structure
 
 <p align="left">
-  <img src="image?raw=true" alt="Project packages"/>
+  <img width="700" src="https://github.com/santimattius/kmm-marvel-app/blob/feature/readme/screenshots/basic-project-structure.png?raw=true" alt="Project packages"/>
 </p>
 
 ## Dependencies
@@ -29,19 +39,23 @@ In the following images you will see how the app is built and what its levels of
 Below you will find the libraries used to build the template and according to my criteria the most used in android development so far.
 
 ### Shared
-
+- [Ktor for networking](https://kotlinlang.org/docs/mobile/use-ktor-for-networking.html)  
+- [Kotlin serialization](https://kotlinlang.org/docs/serialization.html)
+- [Koin](https://insert-koin.io/)
+- [Kotlin coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
+ 
 ### Android
-- [Dependencia]()
-- [Dependencia]()
-- [Dependencia]()
-- [Dependencia]()
+-  [Jetpack compose] (https://developer.android.com/jetpack/compose)
+-  [Paging 3.0](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
+-  [Jetpack compose navigation](https://developer.android.com/jetpack/compose/navigation?hl=es-419)
+-  [Koin](https://insert-koin.io/)
+-  [Coil](https://coil-kt.github.io/coil/compose/)
+-  [Kotlin coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) and [Kotlion Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html)
 
 ### iOS
-- [Dependencia]()
-- [Dependencia]()
-- [Dependencia]()
-- [Dependencia]()
-- [Dependencia]()
+- [SwiftUI](https://developer.apple.com/xcode/swiftui/)
+- [AsyncImage](https://developer.apple.com/documentation/swiftui/asyncimage)
+- [Combine](https://developer.apple.com/documentation/combine)
 
 ## Setup
 
@@ -70,9 +84,8 @@ android {
  ```
 ### iOS
 
+Add in the Credentials.plist file the following variables marvelPrivateKey and marvelPublicKey with the keys obtained in the marvel api portal.
+
 ## Referencias
 
-- [Referencia]()
-- [Referencia]()
-- [Referencia]()
-- [Referencia]()
+- [Kotlin Mobile Multiplaform Official site](https://kotlinlang.org/lp/mobile/)
