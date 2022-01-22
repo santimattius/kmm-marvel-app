@@ -45,7 +45,7 @@ Below you will find the libraries used to build the template and according to my
 - [Kotlin coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
  
 ### Android
--  [Jetpack compose] (https://developer.android.com/jetpack/compose)
+-  [Jetpack compose](https://developer.android.com/jetpack/compose)
 -  [Paging 3.0](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
 -  [Jetpack compose navigation](https://developer.android.com/jetpack/compose/navigation?hl=es-419)
 -  [Koin](https://insert-koin.io/)
