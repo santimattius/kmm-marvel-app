@@ -1,6 +1,6 @@
 # KMM Marvel App
 
-Application using Kotlin mobile multi platform and Marvel API.
+Application using Kotlin Mobile Multi Platform and Marvel API.
 
 Oficial documentation: https://kotlinlang.org/lp/mobile/
 
