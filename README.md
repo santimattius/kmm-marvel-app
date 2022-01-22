@@ -84,7 +84,7 @@ android {
  ```
 ### iOS
 
-Add in the Credentials.plist file the following variables marvelPrivateKey and marvelPublicKey with the keys obtained in the marvel api portal.
+Add in the [Credentials.plist](https://github.com/santimattius/kmm-marvel-app/blob/master/iosApp/iosApp/Credentials.plist) file the following variables marvelPrivateKey and marvelPublicKey with the keys obtained in the marvel api portal.
 
 ## Referencias
 
