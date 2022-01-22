@@ -3,10 +3,10 @@ package com.santimattius.kmm.marvel
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
-class AndroidGreetingTest {
+class AndroidSharedTest {
 
     @Test
     fun testExample() {
-        assertTrue("Check Android is mentioned", Greeting().greeting().contains("Android"))
+        assertTrue("Check Android is mentioned", Shared().title().contains("Android"))
     }
 }

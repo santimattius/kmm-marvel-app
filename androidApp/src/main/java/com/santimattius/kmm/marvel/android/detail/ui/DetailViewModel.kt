@@ -1,4 +1,4 @@
-package com.santimattius.kmm.marvel.android.detail.application
+package com.santimattius.kmm.marvel.android.detail.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

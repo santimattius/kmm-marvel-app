@@ -1,12 +1,14 @@
 import SwiftUI
 import shared
+import Combine
 
-struct ContentView: View {
-	let greet = Greeting().greeting()
-
-	var body: some View {
-		Text(greet)
-	}
+struct ContentView: View { 
+	
+    private let sdk = MarvelSDK()
+    
+    var body: some View {
+        CharactersView(viewModel:  CharactersViewModel(sdk: sdk ))
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

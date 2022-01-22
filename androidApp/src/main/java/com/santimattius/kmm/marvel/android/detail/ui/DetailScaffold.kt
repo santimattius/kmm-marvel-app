@@ -1,4 +1,4 @@
-package com.santimattius.kmm.marvel.android.detail.presentation
+package com.santimattius.kmm.marvel.android.detail.ui
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material.ExperimentalMaterialApi
