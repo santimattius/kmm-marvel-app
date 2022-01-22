@@ -116,31 +116,15 @@ private fun GridOfCharacters(
 @ExperimentalCoilApi
 @Composable
 fun CharacterItem(character: Character, modifier: Modifier = Modifier) {
-    Column(
-        modifier = modifier.padding(dimensionResource(R.dimen.small))
-    ) {
-        Card {
-            Image(
-                painter = rememberImagePainter(data = character.thumbnail),
-                contentDescription = character.name,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color.LightGray)
-                    .aspectRatio(ratio = 0.67f),
-            )
-        }
-        Box(
-            modifier = Modifier.padding(
-                dimensionResource(R.dimen.small),
-                dimensionResource(R.dimen.medium)
-            )
-        ) {
-            Text(
-                text = character.name,
-                style = MaterialTheme.typography.subtitle1,
-                maxLines = 2
-            )
-        }
+    Card(modifier = modifier.padding(dimensionResource(R.dimen.small))) {
+        Image(
+            painter = rememberImagePainter(data = character.thumbnail),
+            contentDescription = character.name,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.LightGray)
+                .aspectRatio(ratio = 0.67f),
+        )
     }
 }

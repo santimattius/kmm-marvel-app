@@ -14,57 +14,11 @@ struct CharacterDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: CharacterDetailViewModel
     
-    var characterId: Int64
-    
     var character:UiCharacter
     
     var body: some View {
         ScrollView{
-            VStack{
-                AsyncImage(
-                    url: URL(string: (viewModel.character ?? character).thumbnail),
-                    transaction: Transaction(animation: .easeIn)) { phase in
-                    switch phase {
-                    case .empty:
-                        ZStack{
-                            Color.gray.opacity(0.1)
-                            ProgressView()
-                        }
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-
-                    case .failure(_):
-                        Image(systemName: "exclamationmark.icloud")
-                            .resizable()
-                            .scaledToFit()
-
-                    @unknown default:
-                        Image(systemName: "exclamationmark.icloud")
-                    }
-                }
-                .frame(
-                    maxWidth: .infinity,
-                    minHeight: 500
-                )
-                
-                Text((viewModel.character ?? character).name)
-                    .font(.system(.title, design: .rounded))
-                    .fontWeight(.black)
-                    .multilineTextAlignment(.center)
-                    .frame(width:300)
-                    .lineLimit(3)
-                
-                Text((viewModel.character ?? character).description)
-                    .font(.system(.subheadline, design: .rounded))
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
-                    .frame(width:300)
-                    .lineLimit(3)
-                
-                Spacer()
-            }
+            content()
         }
         .edgesIgnoringSafeArea(.top)
         .navigationBarBackButtonHidden(true)
@@ -78,16 +32,76 @@ struct CharacterDetailView: View {
                     .foregroundColor(.white)
             })
         ).onAppear{
-            self.viewModel.loadCharacters(id: self.characterId)
+            self.viewModel.loadCharacters(character: self.character)
         }
     }
+    
+    private func content() -> AnyView {
+        switch viewModel.state {
+            case .loading:
+                return AnyView(ProgressView())
+            case .result(let character):
+            return AnyView(
+                    VStack{
+                        AsyncImage(
+                            url: URL(string: character.thumbnail),
+                            transaction: Transaction(animation: .easeIn)) { phase in
+                            switch phase {
+                            case .empty:
+                                ZStack{
+                                    Color.gray.opacity(0.1)
+                                    ProgressView()
+                                }
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+
+                            case .failure(_):
+                                Image(systemName: "exclamationmark.icloud")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundColor(.gray)
+
+                            @unknown default:
+                                Image(systemName: "exclamationmark.icloud")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                        .frame(
+                            maxWidth: .infinity,
+                            minHeight: 500
+                        )
+                        
+                        Text(character.name)
+                            .font(.system(.title, design: .rounded))
+                            .fontWeight(.black)
+                            .multilineTextAlignment(.center)
+                            .frame(width:300)
+                            .lineLimit(3)
+                        
+                        Text(character.description)
+                            .font(.system(.subheadline, design: .rounded))
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.center)
+                            .frame(width:300)
+                            .lineLimit(3)
+                        
+                        Spacer()
+                    }
+                )
+            case .error(let description):
+                return AnyView(Text(description).multilineTextAlignment(.center))
+            }
+        }
 }
 
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterDetailView(
             viewModel: CharacterDetailViewModel(sdk: MarvelSDK()),
-            characterId: 1,
             character: UiCharacter(
                 id: 1,
                 name: "Prueba",

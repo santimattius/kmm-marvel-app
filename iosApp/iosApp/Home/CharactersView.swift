@@ -14,8 +14,6 @@ struct CharactersView: View {
     
     @ObservedObject var viewModel: CharactersViewModel
     
-    private let greet = Greeting().greeting()
-    
     private let columns: [GridItem] =
     Array(repeating: .init(.flexible()),count: 2)
     
@@ -25,7 +23,7 @@ struct CharactersView: View {
                 .onAppear{
                     viewModel.loadCharacters()
                 }
-                .navigationTitle(greet)
+                .navigationTitle("KMM Marvel App")
         }
     }
     
@@ -43,7 +41,6 @@ struct CharactersView: View {
                                        viewModel: CharacterDetailViewModel(
                                            sdk: MarvelSDK()
                                        ),
-                                       characterId: item.id,
                                        character: item
                                    )){
                                    CharacterItemView(

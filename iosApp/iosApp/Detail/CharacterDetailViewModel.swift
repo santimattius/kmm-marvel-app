@@ -13,7 +13,7 @@ import shared
 
 final class CharacterDetailViewModel:ObservableObject{
     
-    @Published public var character: UiCharacter?
+    @Published public var state:CharacterDetailViewState = .loading
     
     private let sdk: MarvelSDK
     
@@ -21,20 +21,25 @@ final class CharacterDetailViewModel:ObservableObject{
         self.sdk = sdk
     }
     
-    func loadCharacters(id: Int64){
-        self.sdk.findCharacterById(id: id, completionHandler: { result, error in
-            
-            if let currentCharacter = result {
-                self.character = UiCharacter(
-                    id:currentCharacter.id,
-                    name: currentCharacter.name,
-                    thumbnail: currentCharacter.thumbnail,
-                    description: currentCharacter.description_
-                )
-           } else {
-               //self.character = UiCharacter(id: 1,name: "Error :(", thumbnail: "", description: "")
-           }
-            
-        })
+    func loadCharacters(character: UiCharacter, reload: Bool = false){
+        if reload {
+            self.sdk.findCharacterById(id: character.id, completionHandler: { result, error in
+                
+                if let currentCharacter = result {
+                    let uiCharacter = UiCharacter(
+                        id:currentCharacter.id,
+                        name: currentCharacter.name,
+                        thumbnail: currentCharacter.thumbnail,
+                        description: currentCharacter.description_
+                    )
+                    self.state = .result(uiCharacter)
+               } else {
+                   self.state = .error("Character not received.")
+               }
+                
+            })
+        } else{
+            self.state = .result(character)
+        }
     }
 }

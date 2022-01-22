@@ -9,7 +9,7 @@
 import Foundation
 
 enum CharactersViewState {
-        case loading
-        case result([UiCharacter])
-        case error(String)
+    case loading
+    case result([UiCharacter])
+    case error(String)
 }
