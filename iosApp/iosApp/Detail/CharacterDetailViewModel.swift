@@ -36,7 +36,6 @@ final class CharacterDetailViewModel:ObservableObject{
                } else {
                    self.state = .error("Character not received.")
                }
-                
             })
         } else{
             self.state = .result(character)

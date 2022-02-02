@@ -24,7 +24,6 @@ struct CharacterDetailView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
             Button(action: {
-                //Navegar a la pantalla previa
                 self.presentationMode.wrappedValue.dismiss()
             }, label: {
                 Image(systemName: "arrow.left.circle.fill")

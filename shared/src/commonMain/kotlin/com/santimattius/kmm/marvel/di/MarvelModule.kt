@@ -30,7 +30,11 @@ val commonModule = module {
     //repository
     factory<CharactersRepository> { CharactersRepositoryImpl(get<MarvelDataSource>()) }
     //data source
-    factory<MarvelDataSource> { MarvelRemoteDataSource(get<HttpClient>()) }
+    factory<MarvelDataSource> {
+        MarvelRemoteDataSource(
+            client = get<HttpClient>(),
+            baseUrl = "https://gateway.marvel.com/v1/public"
+        ) }
     //client
     single<HttpClient> { ktorHttpClient(get<Credentials>()) }
 }

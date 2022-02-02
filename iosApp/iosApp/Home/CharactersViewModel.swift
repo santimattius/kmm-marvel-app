@@ -21,8 +21,7 @@ final class CharactersViewModel: ObservableObject{
     }
     
     func loadCharacters(){
-        self.sdk.getCharactersPage(offset: 0, limit: 100, completionHandler: { result, error in
-            
+        self.sdk.getCharactersPage(offset: 1, limit: 100, completionHandler: { result, error in
             if let currentCharacters = result {
                 let characters = currentCharacters.map{ item in
                     UiCharacter(id:item.id, name: item.name, thumbnail: item.thumbnail, description: item.description_)
